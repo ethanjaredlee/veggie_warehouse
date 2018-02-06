@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class supplyDock : MonoBehaviour {
+public class supplyDock : MonoBehaviour
+{
 
+	private Component _storage;
+	
 	// Use this for initialization
 	void Start () {
-		
+		// how to do this
+		_storage = GameObject.Find("Storage").GetComponent<storage>();		
 	}
 	
 	// Update is called once per frame
@@ -14,7 +18,8 @@ public class supplyDock : MonoBehaviour {
 		
 	}
 	
-	void OnMouseDown(){
-		Debug.Log("Supply was clicked");
+	void OnMouseDown()
+	{
+/*		_storage.AddStorage();*/
 	}
 }
