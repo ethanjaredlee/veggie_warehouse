@@ -36,6 +36,23 @@ public class storage : MonoBehaviour
 
 		Debug.Log(StoredItems);
 	}
+
+	public void RemoveStorage(string productName, int value)
+	{
+		if (StoredItems.ContainsKey(productName))
+		{
+			if (StoredItems[productName] < value)
+			{
+				// how should we handle this case?
+				Debug.Log("this should break because there's not enough of the item in storage");
+			}
+			else
+			{
+				StoredItems[productName] -= value;
+			}
+			
+		}
+	}
 	
 	void OnMouseDown(){
 		AddStorage("corn", 5);

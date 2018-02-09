@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Security.AccessControl;
+using NUnit.Framework;
 using UnityEngine;
 
 public class WarehouseManager : MonoBehaviour {
@@ -23,11 +24,29 @@ public class WarehouseManager : MonoBehaviour {
 		// tbh not sure this is necessary
 		Actions = new List<string> {"addItem"};
 
+		SupportedProducts = new List<string>
+		{
+			"Broccoli",
+			"Corn",
+			"Eggplant",
+		};
+
 		Satisfaction = 50f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
+	}
+
+	void NextDay()
+	{
+		Day += 1;
+		
+	}
+
+	void GenerateNewOrders()
+	{
 		
 	}
 }

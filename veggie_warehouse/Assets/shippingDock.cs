@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shippingDock : MonoBehaviour {
+public class shippingDock : MonoBehaviour
+{
 
+	private GameObject _storage;
+	
 	// Use this for initialization
 	void Start () {
 		
+		_storage = GameObject.Find("Storage");		
 	}
 	
 	// Update is called once per frame
@@ -14,7 +18,9 @@ public class shippingDock : MonoBehaviour {
 		
 	}
 	
-	void OnMouseDown(){
-		Debug.Log("Shipping was clicked");
+	
+	void OnMouseDown()
+	{
+		_storage.GetComponent<storage>().RemoveStorage("corn", 5);
 	}
 }

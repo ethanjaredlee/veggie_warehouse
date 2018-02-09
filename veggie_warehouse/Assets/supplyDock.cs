@@ -5,12 +5,11 @@ using UnityEngine;
 public class supplyDock : MonoBehaviour
 {
 
-	private Component _storage;
+	private GameObject _storage;
 	
 	// Use this for initialization
 	void Start () {
-		// how to do this
-		_storage = GameObject.Find("Storage").GetComponent<storage>();		
+		_storage = GameObject.Find("Storage");		
 	}
 	
 	// Update is called once per frame
@@ -20,6 +19,6 @@ public class supplyDock : MonoBehaviour
 	
 	void OnMouseDown()
 	{
-/*		_storage.AddStorage();*/
+		_storage.GetComponent<storage>().RemoveStorage("corn", 5);
 	}
 }
